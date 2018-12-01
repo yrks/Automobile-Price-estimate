@@ -100,10 +100,7 @@ P値が有意水準以下の場合は仮説を棄却する（その説明変数�
 `単回帰モデルでは、説明変数として、量的変数しか扱えず、質的変数は扱えない（扱えなくはないが、予測値が離散値となってしまう）。`  
 `後述の重回帰分析では、量的変数に加え、質的変数も考慮したモデルを作成する。`
 
-#### engine.size
 ![lm_engine](https://user-images.githubusercontent.com/32303518/49332328-c58a5900-f5ee-11e8-9deb-48e3d86b8233.png)
-
-#### width
 ![lm_width](https://user-images.githubusercontent.com/32303518/49332334-ea7ecc00-f5ee-11e8-869a-8e5613e6d9fa.png)
 
 
@@ -114,11 +111,9 @@ P値が有意水準以下の場合は仮説を棄却する（その説明変数�
 - 目的変数に影響する説明変数のみ選択(t検定のp値が1%有意となる説明変数のみ採用)  
 - 多重共線性を考慮し、説明変数間で高い相関をもつ変数を集約(VIF<10 となる説明変数のみ採用)  
 
-#### 量的変数のみ 
 ![glm_numetric1](https://user-images.githubusercontent.com/32303518/49332316-822fea80-f5ee-11e8-895b-4ed69adef93d.png)
 ![glm_numetric2](https://user-images.githubusercontent.com/32303518/49332325-a7245d80-f5ee-11e8-8fac-de1991da93de.png)
 
-#### 量的変数・質的変数
 ![glm_all1](https://user-images.githubusercontent.com/32303518/49332285-0635a280-f5ee-11e8-8c29-0815dd1cafa7.png)
 ![glm_all2](https://user-images.githubusercontent.com/32303518/49332293-1e0d2680-f5ee-11e8-902c-13e36c5ea8c7.png)
 
