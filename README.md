@@ -15,9 +15,9 @@
 ## 1.使用データ
 本プロジェクトでは、自動車のデータセット（車種毎に製品仕様と価格が異なる）を使用することとした。  
 [Kaggle AutomobileDataset](https://www.kaggle.com/toramky/automobile-dataset)  
-1) 1985 Model Import Car and Truck Specifications, 1985 Ward's Automotive Yearbook. 
-2) Personal Auto Manuals, Insurance Services Office, 160 Water Street, New York, NY 10038  
-3) Insurance Collision Report, Insurance Institute for Highway Safety, Watergate 600, Washington, DC 20037
+`1) 1985 Model Import Car and Truck Specifications, 1985 Ward's Automotive Yearbook.`  
+`2) Personal Auto Manuals, Insurance Services Office, 160 Water Street, New York, NY 10038`  
+`3) Insurance Collision Report, Insurance Institute for Highway Safety, Watergate 600, Washington, DC 20037`  
 - データ数:205
 - 属性：26 (price / symboling / normalized-losses / make / fuel-type / aspiration / num-of-doors / body-style / drive-wheels / engine-location / wheel-base / length / width / height / curb-weight / engine-type / num-of-cylinders / engine-size / fuel-system / bore / stroke / compression-ratio / horsepower / peak-rpm / city-mpg / highway-mpg)
 
@@ -91,7 +91,7 @@ P値が有意水準以下の場合は仮説を棄却する（その説明変数�
 #### 予測結果の評価指標
 実価格と予測価格の相関係数を、予測モデルの評価指標とした。  
 実価格と予測価格の相関係数が1に近づくほど、より精度の良いモデルと判断する。  
-相関係数ρ = 共分散σxy / 標準偏差σx・標準偏差σy
+`相関係数ρ = 共分散σxy / 標準偏差σx・標準偏差σy`
 
 
 ### 4-1.単回帰
@@ -136,5 +136,5 @@ P値が有意水準以下の場合は仮説を棄却する（その説明変数�
 - 相関分析/主成分分析
 - 回帰/重回帰/機械学習/ニューラルネットワーク
 
-結果として、製品仕様の影響による、価格変動の分析、及び価格推定は可能と判断出来た。
+結果として、製品仕様の影響による、価格変動の分析、及び価格推定は可能と判断する。  
 まずは活用出来るようなデータの管理を行い、そして適切な手法による分析及び予測を行うことが重要である。
