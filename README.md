@@ -18,10 +18,10 @@
 1) 1985 Model Import Car and Truck Specifications, 1985 Ward's Automotive Yearbook. 
 2) Personal Auto Manuals, Insurance Services Office, 160 Water Street, New York, NY 10038  
 3) Insurance Collision Report, Insurance Institute for Highway Safety, Watergate 600, Washington, DC 20037
-- レコード数：205レコード
-- 属性：26カラム (price / symboling / normalized-losses / make / fuel-type / aspiration / num-of-doors / body-style / drive-wheels / engine-location / wheel-base / length / width / height / curb-weight / engine-type / num-of-cylinders / engine-size / fuel-system / bore / stroke / compression-ratio / horsepower / peak-rpm / city-mpg / highway-mpg)
+- データ数:205
+- 属性：26 (price / symboling / normalized-losses / make / fuel-type / aspiration / num-of-doors / body-style / drive-wheels / engine-location / wheel-base / length / width / height / curb-weight / engine-type / num-of-cylinders / engine-size / fuel-system / bore / stroke / compression-ratio / horsepower / peak-rpm / city-mpg / highway-mpg)
 
-|変数|値|変数種類|
+|属性|値|属性種類|
 |---|---|---|
 |make(製造元)|TOYOTA、BMWなど|質的変数|
 |body-style(車種)|セダン、ハッチバックなど|質的変数|
