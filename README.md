@@ -9,7 +9,7 @@
 さらに、下記複数の手法により、製品仕様に応じた価格の推定モデルを構築する。  
 - 回帰
 - 重回帰
-- 機械学習(SVM)
+- 機械学習(SVR)
 - ニューラルネットワーク
 
 ## 1.使用データ
@@ -102,9 +102,8 @@ P値が有意水準以下の場合は仮説を棄却する（その説明変数�
 `単回帰モデルでは、説明変数として、量的変数しか扱えず、質的変数は扱えない（扱えなくはないが、予測値が離散値となってしまう）。`  
 `後述の重回帰分析では、量的変数に加え、質的変数も考慮したモデルを作成する。`
 
-![lm_engine](https://user-images.githubusercontent.com/32303518/49332328-c58a5900-f5ee-11e8-9deb-48e3d86b8233.png)
-![lm_width](https://user-images.githubusercontent.com/32303518/49332334-ea7ecc00-f5ee-11e8-869a-8e5613e6d9fa.png)
-
+![slide_lm_engine](https://user-images.githubusercontent.com/32303518/49335585-41a69000-f633-11e8-8b30-ed60a3e41ced.png)
+![slide_lm_width](https://user-images.githubusercontent.com/32303518/49335589-5d119b00-f633-11e8-95cc-62122ea979c4.png)
 
 ### 4-2.重回帰
 次に、複数の説明変数で目的変数を説明する重回帰分析にて分析を行なった。  
@@ -114,16 +113,12 @@ P値が有意水準以下の場合は仮説を棄却する（その説明変数�
 - 多重共線性を考慮し、説明変数間で高い相関をもつ変数を集約(VIF<10 となる説明変数のみ採用)  
 
 #### 量的変数のみ
-![glm_numetric1](https://user-images.githubusercontent.com/32303518/49332316-822fea80-f5ee-11e8-895b-4ed69adef93d.png)
-![glm_numetric2](https://user-images.githubusercontent.com/32303518/49332325-a7245d80-f5ee-11e8-8fac-de1991da93de.png)
-
+![slide_glm_numetric](https://user-images.githubusercontent.com/32303518/49335580-318eb080-f633-11e8-9b20-7b499dd7cddd.png)
 量的変数のみによる実価格と予測価格の相関係数は、0.84となった。　　
 単一の説明関数による回帰分析（0.81, 0.79）よりも、複数の説明変数による重回帰分析の方が予測精度が高いことがわかる。
 
 #### 量的変数/質的変数
-![glm_all1](https://user-images.githubusercontent.com/32303518/49332285-0635a280-f5ee-11e8-8c29-0815dd1cafa7.png)
-![glm_all2](https://user-images.githubusercontent.com/32303518/49332293-1e0d2680-f5ee-11e8-902c-13e36c5ea8c7.png)
-
+![slide_glm_all](https://user-images.githubusercontent.com/32303518/49335575-158b0f00-f633-11e8-9de2-ab520ccadf9a.png)
 続いて、量的変数に質的変数を加えて予測を行った。  
 結果として、実価格と予測価格の相関係数は、0.90となった。  
 説明変数として、量的変数のみの場合（0.84）よりも予測精度が高まっていることがわかる。  
@@ -134,12 +129,11 @@ P値が有意水準以下の場合は仮説を棄却する（その説明変数�
 - PC4(13%)：メーカー
 主成分のうちPC2/PC3/PC4は質的変数であるが、これらの成分も考慮することで、より予測精度の高いモデルとなっていることがわかる。  
 
-### 4-3.機械学習(SVM)
+### 4-3.機械学習(SVR)
 さらに、機械学習(Support Vector Regression)で予測を行った。  
 実価格と予測価格の相関係数は、0.98となった。  
 回帰分析・重回帰分析に比べても、予測精度は極めて高いといえる。  
-![svm1](https://user-images.githubusercontent.com/32303518/49332356-3f224700-f5ef-11e8-9717-f4a6938d5b96.png)
-![svm2](https://user-images.githubusercontent.com/32303518/49332361-52cdad80-f5ef-11e8-90ed-0c50afccef2b.png)
+![slide_svr](https://user-images.githubusercontent.com/32303518/49335598-7fa3b400-f633-11e8-9f97-c323f7728e65.png)
 
 ### 4-4.ニューラルネットワーク
 最後に、Newral Networkで予測を行った。  
@@ -147,13 +141,12 @@ P値が有意水準以下の場合は仮説を棄却する（その説明変数�
 回帰分析・重回帰分析よりも予測精度は高いが、SVRよりは低い結果となった。  
 これは、十分なデータ量がないためと考えられる。  
 `そもそもNewral Networkは今回のような問題には向いていないかもしれない。Newral Networkが得意とするのは、もっと複雑な問題を、多数重ねあわせたパーセプトロンで多数のデータを元に学習するような場合である。今回のように比較的簡単な問題を少量のデータから解くような場合は、SVRの方が深層学習よりも強力と考えられている。`  
-![nnet1](https://user-images.githubusercontent.com/32303518/49332339-fcf90580-f5ee-11e8-98dd-72677835a0b1.png)
-![nnet2](https://user-images.githubusercontent.com/32303518/49332347-139f5c80-f5ef-11e8-85df-0ad8c1e907f2.png)
+![slide_nnet](https://user-images.githubusercontent.com/32303518/49335591-6bf84d80-f633-11e8-930f-84ffa8b306c5.png)
 
 ## 5.価格推定モデルによる予測
 構築したモデルを用いて、製品仕様から価格を推定した。  
 予測結果を比較すると、伝統的に行われている回帰予測よりも、重回帰・機械学習といった手法の方が高い精度で予測出来ていることがわかる。  
-![estimate](https://user-images.githubusercontent.com/32303518/49332279-ebfbc480-f5ed-11e8-845e-7385d3f08501.png)
+![slide_estimate](https://user-images.githubusercontent.com/32303518/49335573-0015e500-f633-11e8-9c6c-4a5fa968831d.png)
 
 ## 6.まとめ
 本プロジェクトでは、以下の統計学的手法を用いて、要因分析及び価格予測モデルの構築を行った。
